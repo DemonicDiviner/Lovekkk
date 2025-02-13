@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>❤️</title>
+  <link rel="stylesheet" href="styles/love.css">
+</head>
+<body>
+  <canvas id="heart"></canvas>
+  <script src="script/love.js"></script>
+
+  <audio id="backgroundMusic" loop>
+    <source src="assets/blue.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+</audio>
+
+<script>
+    const audio = document.getElementById('backgroundMusic');
+
+    // Попробуем запустить музыку при загрузке страницы
+    window.addEventListener('load', () => {
+        audio.play().then(() => {
+            audio.muted = false;
+        }).catch(error => {
+            console.log('Автозапуск заблокирован. Пользователь должен взаимодействовать с сайтом.');
+        });
+    });
+</script>
+
+  <script>
+    document.addEventListener('click', () => {
+        audio.play();
+    }, { once: true });
+  </script>
+
+</body>
+</html>
